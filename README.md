@@ -1,5 +1,6 @@
+
 <p align="center">
-  <img src="https://github.com/caoslourenco/E-commerce/assets/18141491/03f10768-b626-4dce-a898-fee1eded0c6c" alt="download" width="50%">
+  <img src="https://github.com/caoslourenco/projeto_final_bloco_01/assets/18141491/2777e4d5-3421-4ee7-a181-dc214b1d97b1" alt="download" width="50%">
 </p>
 
   
