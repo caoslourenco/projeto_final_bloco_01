@@ -8,7 +8,7 @@ import java.util.Scanner;
 import GreenDragon.Model.Cadastro;
 import GreenDragon.Model.Domestico;
 import GreenDragon.Model.Silvestre;
-import GreenDragon.controller.CadastroController;
+import GreenDragon.Controller.CadastroController;
 import GreenDragon.util.Cores;
 
 public class Menu {
