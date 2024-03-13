@@ -1,52 +1,47 @@
 # Nome do executável
 NAME = GreenDragon
 
-# Compilador
-CC = javac
-
-# Flags do compilador
-CFLAGS = -g
-
-# Comando para remover arquivos
-RM = rm -rf
-
 # Diretórios
 MODEL_DIR = Model
 REPOSITORY_DIR = Repository
 CONTROLLER_DIR = Controller
 UTILS_DIR = Utils
 
+# Binários
+JAVAC = javac
+JAVA = java
+
+# Diretório de saída
+OUT_DIR = out
+
 # Arquivos fonte
-SRCS = $(wildcard $(MODEL_DIR)/*.java) \
-       $(wildcard $(REPOSITORY_DIR)/*.java) \
-       $(wildcard $(CONTROLLER_DIR)/*.java) \
-       $(wildcard $(UTILS_DIR)/*.java) \
-       Menu.java
+SRCS := $(wildcard $(MODEL_DIR)/*.java) \
+        $(wildcard $(REPOSITORY_DIR)/*.java) \
+        $(wildcard $(CONTROLLER_DIR)/*.java) \
+        $(wildcard $(UTILS_DIR)/*.java) \
+        Menu.java
 
 # Objetos
-OBJS = $(SRCS:.java=.class)
+OBJS := $(SRCS:%.java=$(OUT_DIR)/%.class)
 
 # Alvo padrão
-all: $(NAME)
+all: $(OUT_DIR)/$(basename $(notdir $(SRCS)))
 
 # Regra de compilação
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@
+$(OUT_DIR)/%.class: %.java | $(OUT_DIR)
+	$(JAVAC) -d $(OUT_DIR) $<
 
-# Regra para compilar os arquivos java
-%.class: %.java
-	$(CC) $(CFLAGS) -classpath $(MODEL_DIR):$(REPOSITORY_DIR):$(CONTROLLER_DIR):$(UTILS_DIR) -d . $<
+# Regra para criar diretório de saída
+$(OUT_DIR):
+	mkdir -p $(OUT_DIR)
 
-# Regra para limpar arquivos
+# Regra para executar
+run: all
+	$(JAVA) -cp $(OUT_DIR) Menu
+
+# Regra para limpar
 clean:
-	$(RM) $(OBJS)
-
-# Regra para limpar e recompilar
-fclean: clean
-	$(RM) $(NAME)
-
-# Regra para reconstruir tudo
-re: fclean all
+	rm -rf $(OUT_DIR)
 
 # Marca os alvos como phony (não são nomes de arquivos)
-.PHONY: all clean fclean re
+.PHONY: all run clean
