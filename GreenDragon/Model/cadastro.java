@@ -1,6 +1,6 @@
 package GreenDragon.Model;
 
-import GreenDragon.util.Cores;
+import GreenDragon.Utils.Cores;
 
 public class Cadastro {
 

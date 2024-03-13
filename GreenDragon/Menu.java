@@ -9,7 +9,7 @@ import GreenDragon.Model.Cadastro;
 import GreenDragon.Model.Domestico;
 import GreenDragon.Model.Silvestre;
 import GreenDragon.Controller.CadastroController;
-import GreenDragon.util.Cores;
+import GreenDragon.Utils.Cores;
 
 public class Menu {
 
