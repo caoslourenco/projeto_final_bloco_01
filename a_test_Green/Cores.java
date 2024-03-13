@@ -1,4 +1,4 @@
-package GreenDragon.Utils; // Pacote onde a classe Cores está localizada
+package GreenDragon; // Pacote onde a classe Cores está localizada
 
 public class Cores {
 

@@ -5,11 +5,12 @@ import java.util.InputMismatchException;
 import java.util.Optional;
 import java.util.Scanner;
 
-import GreenDragon.Model.Cadastro;
-import GreenDragon.Model.Domestico;
-import GreenDragon.Model.Silvestre;
-import GreenDragon.Controller.CadastroController;
-import GreenDragon.Utils.Cores;
+import GreenDragon.Cadastro;
+import GreenDragon.Domestico;
+import GreenDragon.Silvestre;
+import GreenDragon.CadastroController;
+import GreenDragon.Cores;
+
 
 public class Menu {
 
@@ -22,15 +23,12 @@ public class Menu {
 		int numero = 0, opcao = 0;
 		String nomePet, nomeTutor, telefone, tutor;
 
-		
-		
-
 		while (true) {
 
 			System.out.println(Cores.TEXT_WHITE + Cores.ANSI_PURPLE_BACKGROUND_BRIGHT
 					+ "****************************************************************************");
 			System.out.println("                                                                            ");
-			System.out.println("                            GreenDragon Pet                                 ");
+			System.out.println("                            Pet                                 ");
 			System.out.println("                                                                            ");
 			System.out.println("****************************************************************************");
 			System.out.println("                                                                            ");
@@ -57,8 +55,7 @@ public class Menu {
 			}
 
 			if (opcao == 0) {
-				System.out.println(Cores.TEXT_WHITE_BOLD + "GreenDragon Pet!");
-				sobre();
+				System.out.println(Cores.TEXT_WHITE_BOLD + "Pet!");
 				leia.close();
 				System.exit(0);
 			}
@@ -130,13 +127,12 @@ public class Menu {
 					tipo = leia.nextInt();
 
 					switch (tipo) {
-					case 1 -> {
-
+					case 1:
 						cadastro.atualizar(new Domestico(numero, nomeTutor, telefone, nomePet, tipo));
-					}
-					case 2 -> {
+						break;
+					case 2:
 						cadastro.atualizar(new Silvestre(numero, nomeTutor, telefone, nomePet, tipo));
-					}
+						break;
 					}
 				}
 
@@ -160,7 +156,7 @@ public class Menu {
 				System.out.println(Cores.TEXT_WHITE + "Consulta por Titular \n\n");
 
 				System.out.println("Digite o nome do Tutor do pet: ");
-				leia.skip("\\R");
+				leia.nextLine();
 				tutor = leia.nextLine();
 
 				cadastro.procurarPorTutor(tutor);
@@ -177,16 +173,6 @@ public class Menu {
 		}
 
 	}
-
-	// public static void sobre() {
-	// 	System.out.println(Cores.TEXT_WHITE + Cores.ANSI_PURPLE_BACKGROUND_BRIGHT
-	// 			+ "****************************************************************************");
-	// 	System.out.println("Projeto desenvolvido por: 🦦                                       ");
-	// 	System.out.println("Projeto Generation Brasil - generation@generation.org              ");
-	// 	System.out.println("https://github.com/caoslourenco/projeto_final_bloco_01             ");
-	// 	System.out.println(
-	// 			"****************************************************************************" + Cores.TEXT_RESET);
-	// }
 
 	public static void keyPress() {
 		try {

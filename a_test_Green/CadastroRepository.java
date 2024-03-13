@@ -1,6 +1,14 @@
-package GreenDragon.Repository;
+package GreenDragon;
 
-import GreenDragon.Model.Cadastro;
+import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Optional;
+import java.util.Scanner;
+
+import GreenDragon.Cadastro;
+import GreenDragon.Domestico;
+ 
+
 import java.util.Optional;
 
 public interface CadastroRepository {

@@ -1,20 +1,22 @@
-NAME=	GreenDragon
+NAME= GreenDragon
 
-SRCS=	Menu.java Cores.java CadastroRepository.java CadastroController.java Silvestre.java Domestico.java Cadastro.java
-OBJS=	$(SRCS:.java=.o)
+SRCS= Menu.java Cores.java CadastroRepository.java CadastroController.java Silvestre.java Domestico.java Cadastro.java
+OBJS= $(SRCS:.java=.class)
 
-RM=		rm -rf
 
-CC=	c++
-FLAGS =		-Wall -Werror -Wextra -std=c++98 -pedantic-errors
 
-all:	$(NAME)
+RM= rm -rf
 
-$(NAME):	$(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+JAVAC= javac
+JAVAC_FLAGS= -Xlint:all Menu.java Cores.java CadastroRepository.java CadastroController.java Silvestre.java Domestico.java Cadastro.java
 
-%.o: %.java
-	$(CC) $(FLAGS) -c $< -o $@
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	# Nenhuma ação necessária, já que os arquivos .class foram compilados
+
+%.class: %.java
+	$(JAVAC) $(JAVAC_FLAGS) $<
 
 clean:
 	$(RM) $(OBJS)

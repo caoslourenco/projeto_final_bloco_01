@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+ 
 
-import GreenDragon.Model.Cadastro;
+import GreenDragon.Cadastro;
+import GreenDragon.Reposiotory; 
 
-import GreenDragon.Repository.CadastroRepository;
 
 public class CadastroController implements CadastroRepository {
 
