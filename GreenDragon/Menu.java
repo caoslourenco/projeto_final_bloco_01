@@ -178,15 +178,15 @@ public class Menu {
 
 	}
 
-	public static void sobre() {
-		System.out.println(Cores.TEXT_WHITE + Cores.ANSI_PURPLE_BACKGROUND_BRIGHT
-				+ "****************************************************************************");
-		System.out.println("Projeto desenvolvido por: Caos Lourenco                            ");
-		System.out.println("Apoio Generation Brasil - generation@generation.org                ");
-		System.out.println("https://github.com/caoslourenco/projeto_final_bloco_01             ");
-		System.out.println(
-				"****************************************************************************" + Cores.TEXT_RESET);
-	}
+	// public static void sobre() {
+	// 	System.out.println(Cores.TEXT_WHITE + Cores.ANSI_PURPLE_BACKGROUND_BRIGHT
+	// 			+ "****************************************************************************");
+	// 	System.out.println("Projeto desenvolvido por: 🦦                                       ");
+	// 	System.out.println("Projeto Generation Brasil - generation@generation.org              ");
+	// 	System.out.println("https://github.com/caoslourenco/projeto_final_bloco_01             ");
+	// 	System.out.println(
+	// 			"****************************************************************************" + Cores.TEXT_RESET);
+	// }
 
 	public static void keyPress() {
 		try {
